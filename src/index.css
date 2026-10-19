@@ -17,6 +17,10 @@
 
   --radius-md: 12px;
   --radius-lg: 20px;
+  --font-size-body: 16px;
+  --font-size-small: 14px;
+  --font-size-h2: 24px;
+  --font-size-h1: 32px;
 }
 
 body {
@@ -24,10 +28,12 @@ body {
   background-color: var(--color-background);
   color: var(--color-text);
   font-family: var(--font-family);
+  font-size: var(--font-size-body);
 }
 
 h1 {
   color: var(--color-teal);
+  font-size: var(--font-size-h1);
 }
 
 p {
