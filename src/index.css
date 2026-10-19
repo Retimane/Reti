@@ -6,16 +6,30 @@
   --color-text: #0F172A;
   --color-error: #EF4444;
   --color-white: #FFFFFF;
+
+  --font-family: "Inter", system-ui, sans-serif;
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 16px;
+  --space-4: 24px;
+  --space-5: 32px;
+
+  --radius-md: 12px;
+  --radius-lg: 20px;
 }
 
 body {
   margin: 0;
   background-color: var(--color-background);
   color: var(--color-text);
+  font-family: var(--font-family);
 }
+
 h1 {
   color: var(--color-teal);
 }
+
 p {
   color: var(--color-navy);
 }
