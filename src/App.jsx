@@ -14,6 +14,7 @@ function App() {
         <h2>Dr. Sarah Müller</h2>
         <p>General practitioner</p>
         <Badge>Demo data</Badge>
+        <Badge variant="pending">Pending confirmation</Badge>
       </Card>
     </main>
    )

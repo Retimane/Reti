@@ -6,6 +6,8 @@
   --color-text: #0F172A;
   --color-error: #EF4444;
   --color-white: #FFFFFF;
+  --color-pending-background: #FEF3C7;
+  --color-pending-text: #92400E;
 
   --font-family: "Inter", system-ui, sans-serif;
 
@@ -79,4 +81,8 @@ p {
   font-weight: 600;
   padding: var(--space-1) var(--space-3);
   border-radius: 999px;
+}
+.badge-pending {
+  background-color: var(--color-pending-background);
+  color: var(--color-pending-text);
 }
