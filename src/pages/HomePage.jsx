@@ -6,6 +6,9 @@ import { doctors } from '../data/doctors'
 
 function HomePage() {
   const [searchText, setSearchText] = useState('')
+  const filteredDoctors = doctors.filter((doctor) =>
+  doctor.name.toLowerCase().includes(searchText.toLowerCase())
+)
   return (
     <main>
       <h1>Reti</h1>
@@ -22,7 +25,10 @@ function HomePage() {
         <Button>Find a doctor</Button>
         <Button>Request appointment</Button>
       </div>
-    {doctors.map((doctor) => (
+    {filteredDoctors.length === 0 && (
+      <p>No doctors found. Try a different name.</p>
+)}
+    {filteredDoctors.map((doctor) => (
       <Card key={doctor.id}>
         <h2>{doctor.name}</h2>
         <p>{doctor.specialty} · {doctor.city}</p>
