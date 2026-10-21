@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Button from '../components/Button'
 import Card from '../components/Card'
 import Badge from '../components/Badge'
+import { doctors } from '../data/doctors'
 
 function HomePage() {
   const [searchText, setSearchText] = useState('')
@@ -21,12 +22,13 @@ function HomePage() {
         <Button>Find a doctor</Button>
         <Button>Request appointment</Button>
       </div>
-      <Card>
-        <h2>Dr. Sarah Müller</h2>
-        <p>General practitioner</p>
+    {doctors.map((doctor) => (
+      <Card key={doctor.id}>
+        <h2>{doctor.name}</h2>
+        <p>{doctor.specialty} · {doctor.city}</p>
         <Badge>Demo data</Badge>
-        <Badge variant="pending">Pending confirmation</Badge>
       </Card>
+))}
     </main>
   )
 }
