@@ -20,13 +20,13 @@ function HomePage() {
        value={searchText}
        onChange={(event) => setSearchText(event.target.value)}
 />
-       <p>You typed: {searchText}</p>
+       
       <div className="button-row">
         <Button>Find a doctor</Button>
         <Button>Request appointment</Button>
       </div>
-    {filteredDoctors.length === 0 && (
-      <p>No doctors found. Try a different name.</p>
+      {filteredDoctors.length === 0 && (
+  <p>No doctors found. Try a different name.</p>
 )}
     {filteredDoctors.map((doctor) => (
       <Card key={doctor.id}>

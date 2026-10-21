@@ -97,6 +97,7 @@ p {
   background-color: var(--color-white);
   border: 1px solid #CBD5E1;
   border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
 }
 
 .search-input:focus-visible {
