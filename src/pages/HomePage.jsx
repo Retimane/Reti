@@ -11,6 +11,7 @@ function HomePage() {
       <p>Healthcare made easier.</p>
       <input
        type="search"
+       className="search-input"
        placeholder="Search for a doctor or specialty"
        value={searchText}
        onChange={(event) => setSearchText(event.target.value)}
