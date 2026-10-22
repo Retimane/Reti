@@ -6,14 +6,21 @@ import { doctors } from '../data/doctors'
 
 function HomePage() {
   const [searchText, setSearchText] = useState('')
+  const [selectedSpecialty, setSelectedSpecialty] = useState('All')
 
   const search = searchText.toLowerCase()
 
-  const filteredDoctors = doctors.filter((doctor) =>
+  const filteredDoctors = doctors.filter((doctor) => {
+  const matchesSearch =
     doctor.name.toLowerCase().includes(search) ||
     doctor.specialty.toLowerCase().includes(search) ||
     doctor.city.toLowerCase().includes(search)
-  )
+
+  const matchesSpecialty =
+    selectedSpecialty === 'All' || doctor.specialty === selectedSpecialty
+
+  return matchesSearch && matchesSpecialty
+})
 
   return (
     <main>
@@ -26,9 +33,13 @@ function HomePage() {
        value={searchText}
        onChange={(event) => setSearchText(event.target.value)}
 />
-       
-      <div className="button-row">
-        <Button>Find a doctor</Button>
+      <button onClick={() => setSelectedSpecialty('All')}>All</button>
+      <button onClick={() => setSelectedSpecialty('Dermatologist')}>Dermatology</button>
+      <button onClick={() => setSelectedSpecialty('General practitioner')}>GP</button>
+      <button onClick={() => setSelectedSpecialty('Cardiologist')}>Cardiology</button>
+      <p>Selected: {selectedSpecialty}</p> 
+      <div className="button-row"> 
+        <Button>Find a doctor</Button> 
         <Button>Request appointment</Button>
       </div>
       {filteredDoctors.length === 0 && (
