@@ -24,8 +24,8 @@ function HomePage() {
 
   return (
     <main>
-      <h1>Reti</h1>
-      <p>Healthcare made easier.</p>
+      <h1>Find the right doctor</h1>
+      <p>Search by name, specialty, or city. Reti is a demo project, so all doctors shown are sample data.</p>
       <input
        type="search"
        className="search-input"
