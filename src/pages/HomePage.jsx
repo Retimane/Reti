@@ -34,6 +34,9 @@ function HomePage() {
        onChange={(event) => setSearchText(event.target.value)}
 />
   <div className="pill-row">
+    <p>
+  {filteredDoctors.length} {filteredDoctors.length === 1 ? 'doctor' : 'doctors'} found
+</p>
   <button
     className={selectedSpecialty === 'All' ? 'pill pill-selected' : 'pill'}
     onClick={() => setSelectedSpecialty('All')}
