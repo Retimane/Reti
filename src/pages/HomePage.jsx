@@ -33,11 +33,33 @@ function HomePage() {
        value={searchText}
        onChange={(event) => setSearchText(event.target.value)}
 />
-      <button onClick={() => setSelectedSpecialty('All')}>All</button>
-      <button onClick={() => setSelectedSpecialty('Dermatologist')}>Dermatology</button>
-      <button onClick={() => setSelectedSpecialty('General practitioner')}>GP</button>
-      <button onClick={() => setSelectedSpecialty('Cardiologist')}>Cardiology</button>
-      <p>Selected: {selectedSpecialty}</p> 
+  <div className="pill-row">
+  <button
+    className={selectedSpecialty === 'All' ? 'pill pill-selected' : 'pill'}
+    onClick={() => setSelectedSpecialty('All')}
+  >
+    All
+  </button>
+  <button
+    className={selectedSpecialty === 'Dermatologist' ? 'pill pill-selected' : 'pill'}
+    onClick={() => setSelectedSpecialty('Dermatologist')}
+  >
+    Dermatology
+  </button>
+  <button
+    className={selectedSpecialty === 'General practitioner' ? 'pill pill-selected' : 'pill'}
+    onClick={() => setSelectedSpecialty('General practitioner')}
+  >
+    GP
+  </button>
+  <button
+    className={selectedSpecialty === 'Cardiologist' ? 'pill pill-selected' : 'pill'}
+    onClick={() => setSelectedSpecialty('Cardiologist')}
+  >
+    Cardiology
+  </button>
+</div>
+
       <div className="button-row"> 
         <Button>Find a doctor</Button> 
         <Button>Request appointment</Button>
