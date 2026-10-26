@@ -6,6 +6,7 @@ import DoctorCard from '../components/DoctorCard'
 function HomePage() {
   const [searchText, setSearchText] = useState('')
   const [selectedSpecialty, setSelectedSpecialty] = useState('All')
+  const [selectedDoctor, setSelectedDoctor] = useState(null)
 
   const search = searchText.toLowerCase()
 
@@ -71,6 +72,7 @@ function HomePage() {
   Clear filters
 </button>
 
+      {selectedDoctor && <p>Selected doctor: {selectedDoctor.name}</p>}
       <div className="button-row"> 
         <Button>Find a doctor</Button> 
         <Button>Request appointment</Button>
@@ -79,7 +81,11 @@ function HomePage() {
   <p>No doctors found. Try a different name, specialty, or city.</p>
 )}
     {filteredDoctors.map((doctor) => (
-      <DoctorCard key={doctor.id} doctor={doctor} />
+      <DoctorCard
+  key={doctor.id}
+  doctor={doctor}
+  onViewProfile={() => setSelectedDoctor(doctor)}
+/>
 ))}
     </main>
   )
