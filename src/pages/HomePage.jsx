@@ -63,7 +63,7 @@ function HomePage() {
         {filteredDoctors.length} {filteredDoctors.length === 1 ? 'doctor' : 'doctors'} found
 </p>
   <button
-  className="pill"
+  className="pill clear-button"
   onClick={() => {
     setSearchText('')
     setSelectedSpecialty('All')
