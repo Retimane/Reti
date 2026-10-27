@@ -9,6 +9,9 @@ function DoctorProfile({ doctor, onBack }) {
       <Card>
         <h2>{doctor.name}</h2>
         <p>{doctor.specialty} · {doctor.city}</p>
+        <p>Clinic: {doctor.clinic}</p>
+        <p>Languages: {doctor.languages}</p>
+        <p>Experience: {doctor.experience}</p>
         <Badge>Demo data</Badge>
       </Card>
     </div>
