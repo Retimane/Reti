@@ -2,6 +2,7 @@ import { useState } from 'react'
 import Button from '../components/Button'
 import { doctors } from '../data/doctors'
 import DoctorCard from '../components/DoctorCard'
+import DoctorProfile from '../components/DoctorProfile'
 
 function HomePage() {
   const [searchText, setSearchText] = useState('')
@@ -21,7 +22,16 @@ function HomePage() {
 
   return matchesSearch && matchesSpecialty
 })
-
+if (selectedDoctor) {
+  return (
+    <main>
+      <DoctorProfile
+        doctor={selectedDoctor}
+        onBack={() => setSelectedDoctor(null)}
+      />
+    </main>
+  )
+}
   return (
     <main>
       <h1>Find the right doctor</h1>
