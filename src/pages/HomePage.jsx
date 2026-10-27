@@ -8,6 +8,7 @@ function HomePage() {
   const [searchText, setSearchText] = useState('')
   const [selectedSpecialty, setSelectedSpecialty] = useState('All')
   const [selectedDoctor, setSelectedDoctor] = useState(null)
+  const [screen, setScreen] = useState('list')
 
   const search = searchText.toLowerCase()
 
@@ -22,12 +23,15 @@ function HomePage() {
 
   return matchesSearch && matchesSpecialty
 })
-if (selectedDoctor) {
+if (screen === 'profile') {
   return (
     <main>
       <DoctorProfile
         doctor={selectedDoctor}
-        onBack={() => setSelectedDoctor(null)}
+        onBack={() => {
+  setSelectedDoctor(null)
+  setScreen('list')
+}}
       />
     </main>
   )
@@ -94,11 +98,13 @@ if (selectedDoctor) {
       <DoctorCard
   key={doctor.id}
   doctor={doctor}
-  onViewProfile={() => setSelectedDoctor(doctor)}
+  onViewProfile={() => {
+  setSelectedDoctor(doctor)
+  setScreen('profile')
+}}
 />
 ))}
     </main>
   )
 }
-
 export default HomePage
