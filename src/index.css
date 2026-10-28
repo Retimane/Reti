@@ -147,3 +147,9 @@ main {
 .clear-button {
   margin-bottom: var(--space-4);
 }
+.notice {
+  background-color: var(--color-mint);
+  border-radius: var(--radius-md);
+  padding: var(--space-3);
+  margin-top: var(--space-3);
+}
