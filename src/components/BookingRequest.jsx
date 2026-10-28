@@ -5,6 +5,8 @@ import Button from './Button'
 function BookingRequest({ doctor, onBack }) {
   const [selectedDate, setSelectedDate] = useState('')
   const dates = ['Mon 3 Nov', 'Tue 4 Nov', 'Wed 5 Nov']
+  const [selectedTime, setSelectedTime] = useState('')
+  const times = ['09:00', '10:30', '14:00']
   return (
     <div>
       <Button onClick={onBack}>Back to profile</Button>
@@ -12,7 +14,7 @@ function BookingRequest({ doctor, onBack }) {
         <h2>Request an appointment</h2>
         <p>With {doctor.name} · {doctor.clinic}</p>
         <p>This is a demo. Nothing you do here is sent to a clinic.</p>
-        <h3>Choose a date</h3>
+<h3>Choose a date</h3>
 <div className="pill-row">
   {dates.map((date) => (
     <button
@@ -25,6 +27,19 @@ function BookingRequest({ doctor, onBack }) {
   ))}
 </div>
 {selectedDate && <p>You picked: {selectedDate}</p>}
+<h3>Choose a time</h3>
+<div className="pill-row">
+  {times.map((time) => (
+    <button
+      key={time}
+      className={selectedTime === time ? 'pill pill-selected' : 'pill'}
+      onClick={() => setSelectedTime(time)}
+    >
+      {time}
+    </button>
+  ))}
+</div>
+{selectedTime && <p>You picked: {selectedTime}</p>}
       </Card>
     </div>
   )
