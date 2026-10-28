@@ -2,7 +2,7 @@ import Card from './Card'
 import Badge from './Badge'
 import Button from './Button'
 
-function DoctorProfile({ doctor, onBack }) {
+function DoctorProfile({ doctor, onBack, onRequestAppointment }) {
   return (
     <div>
       <Button onClick={onBack}>Back to results</Button>
@@ -13,6 +13,7 @@ function DoctorProfile({ doctor, onBack }) {
         <p>Languages: {doctor.languages}</p>
         <p>Experience: {doctor.experience}</p>
         <Badge>Demo data</Badge>
+        <Button onClick={onRequestAppointment}>Request appointment</Button>
       </Card>
     </div>
   )

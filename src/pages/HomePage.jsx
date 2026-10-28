@@ -3,6 +3,7 @@ import Button from '../components/Button'
 import { doctors } from '../data/doctors'
 import DoctorCard from '../components/DoctorCard'
 import DoctorProfile from '../components/DoctorProfile'
+import BookingRequest from '../components/BookingRequest'
 
 function HomePage() {
   const [searchText, setSearchText] = useState('')
@@ -29,9 +30,20 @@ if (screen === 'profile') {
       <DoctorProfile
         doctor={selectedDoctor}
         onBack={() => {
-  setSelectedDoctor(null)
-  setScreen('list')
-}}
+          setSelectedDoctor(null)
+          setScreen('list')
+        }}
+        onRequestAppointment={() => setScreen('booking')}
+      />
+    </main>
+  )
+}
+if (screen === 'booking') {
+  return (
+    <main>
+      <BookingRequest
+        doctor={selectedDoctor}
+        onBack={() => setScreen('profile')}
       />
     </main>
   )
