@@ -7,6 +7,7 @@ function BookingRequest({ doctor, onBack }) {
   const dates = ['Mon 3 Nov', 'Tue 4 Nov', 'Wed 5 Nov']
   const [selectedTime, setSelectedTime] = useState('')
   const times = ['09:00', '10:30', '14:00']
+  const [submitted, setSubmitted] = useState(false)
   return (
     <div>
       <Button onClick={onBack}>Back to profile</Button>
@@ -40,6 +41,20 @@ function BookingRequest({ doctor, onBack }) {
   ))}
 </div>
 {selectedTime && <p>You picked: {selectedTime}</p>}
+{selectedDate && selectedTime && (
+  <p>
+    Your request: {selectedDate} at {selectedTime} with {doctor.name}
+  </p>
+)}
+{selectedDate && selectedTime && !submitted && (
+  <Button onClick={() => setSubmitted(true)}>Submit request</Button>
+)}
+{submitted && (
+  <p>
+    Demo only: this request was not sent to any clinic. In a real app, the clinic would
+    need to confirm it before it becomes an appointment.
+  </p>
+)}
       </Card>
     </div>
   )
