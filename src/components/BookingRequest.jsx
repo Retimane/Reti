@@ -50,8 +50,8 @@ function BookingRequest({ doctor, onBack }) {
   <Button onClick={() => setSubmitted(true)}>Submit request</Button>
 )}
 {submitted && (
-  <p>
-    Demo only: this request was not sent to any clinic. In a real app, the clinic would
+ <p className="notice">
+     Demo only: this request was not sent to any clinic. In a real app, the clinic would
     need to confirm it before it becomes an appointment.
   </p>
 )}
